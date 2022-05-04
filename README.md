@@ -4,6 +4,11 @@
 ### GFOP
 In case of an update to the GFOP ontology, replace the _data/GFOP.owl_ file (download from webprotege as RDF/XML) and run the _gfop_to_json.py_ script. This will create a json tree of the ontology.
 
+## microbeMASST
+Download MASST results as .tsv file for all data file matches. Run the `microbe_masst_results.py` script to extract a file with all the matches to specific IDs in the metadata table. The `build_tree.py` script is then adding these results onto the tree ontology.
+
+[Example: Yersiniabactin](https://robinschmid.github.io/GFOPontology/examples/microbeMasst_yersiniabactin.html)
+
 ### Classyfire
 Download the classyfire ontology in json format. Run the _classyfire_to_json_ontology.py_ script to generate the correct format for the tree.
 
