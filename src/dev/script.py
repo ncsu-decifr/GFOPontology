@@ -1,6 +1,8 @@
 
-local_file = "src/dist/oneindex.html"
-remote_file = "src/dist/oneindex_src.html"
+
+
+local_file = "../dist/oneindex.html"
+remote_file = "../dist/oneindex_src.html"
 
 with open(remote_file) as fp:
     original_html_text = fp.read()
@@ -19,8 +21,8 @@ for tag in soup.find_all('script'):
     print(tag.text[-100:])
 
 
-content = soup.find_all('script')[2].text
-with open("content_remote.js", "w") as fp:
-    fp.write(content)
+# content = soup.find_all('script')[2].text
+# with open("content_remote.js", "w") as fp:
+#     fp.write(content)
 
 
