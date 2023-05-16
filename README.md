@@ -92,3 +92,5 @@ options:
 
 ```
 
+This last script should create dist/oneindex.html to view ontology.
+
