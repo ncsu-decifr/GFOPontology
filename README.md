@@ -55,6 +55,15 @@ python microbe_masst_results.py \
 5  749527             1
 6       2             2
 
+cat dist/microbe_masst_counts.tsv
+ncbi    matched_size
+562     9
+blank   15
+316435  40
+749550  1
+749535  1
+749527  1
+2       2
 
 ```
 
