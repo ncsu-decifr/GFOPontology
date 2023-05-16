@@ -1,4 +1,4 @@
-
+#!/usr/local/pythonenvs/gfop_env/bin/python
 
 
 local_file = "../dist/oneindex.html"
