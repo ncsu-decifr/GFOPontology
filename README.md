@@ -21,3 +21,5 @@ This will:
 4. Uses base html file to internalize the tree data and all dependencies
 5. Find the resulting tree data file and html file in the _dist_ folder. Default: _dist/oneindex.html_
 
+### Mass Spectrometry Searches using MASST
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7236533/
