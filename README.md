@@ -25,6 +25,11 @@ This will:
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7236533/
 
 ### Pipeline
+edit bundle_to_html.py", line 83
+# soup.html.body.append(new_script)
+soup.body.append(new_script)
+
+
 ```
 source /usr/local/pythonenvs/gfop_env/bin/activate
 pip install pandas==1.5.3

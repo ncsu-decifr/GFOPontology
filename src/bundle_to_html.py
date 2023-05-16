@@ -79,7 +79,8 @@ def build_dist_html(input_html, output_html, data_json_file=None, compress=False
             # insert script element
             new_script = soup.new_tag('script')
             new_script.string = file_text
-            soup.html.body.append(new_script)
+            # soup.html.body.append(new_script)
+            soup.body.append(new_script)
 
     # Find image tags.
     for tag in soup.find_all('img', src=True):
