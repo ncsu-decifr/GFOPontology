@@ -27,6 +27,8 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7236533/
 ### Pipeline
 ```
 source /usr/local/pythonenvs/gfop_env/bin/activate
+pip install pandas==1.5.3
+
 cd src/
 python microbe_masst_results.py -h
 usage: microbe_masst_results.py [-h] [--metadata_file METADATA_FILE]
