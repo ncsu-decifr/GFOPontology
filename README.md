@@ -44,7 +44,7 @@ options:
   --out_tsv_file OUT_TSV_FILE
                         output file in .tsv format
 
- python microbe_masst_results.py \
+python microbe_masst_results.py \
 > --masst_file ../examples/yersiniabactin.tsv
      ncbi  matched_size
 0     562             9
