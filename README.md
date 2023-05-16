@@ -65,5 +65,25 @@ blank   15
 749527  1
 2       2
 
+python build_tree.py -h
+usage: build_tree.py [-h] [--in_html IN_HTML] [--ontology ONTOLOGY] [--in_data IN_DATA]
+                     [--out_html OUT_HTML] [--compress COMPRESS] [--out_tree OUT_TREE]
+                     [--format FORMAT] [--node_key NODE_KEY] [--data_key DATA_KEY]
+
+Create tree data by merging extra data into an ontology. Then create a distributable html file that
+internalizes all scripts, data, etc.
+
+options:
+  -h, --help           show this help message and exit
+  --in_html IN_HTML    The input html file
+  --ontology ONTOLOGY  the json ontology file with children
+  --in_data IN_DATA    a tab separated file with additional data that is added to the ontology
+  --out_html OUT_HTML  output html file
+  --compress COMPRESS  Compress output file (needs minify_html)
+  --out_tree OUT_TREE  output file
+  --format FORMAT      Format the json output False or True
+  --node_key NODE_KEY  the field in the ontology to be compare to the field in the data file
+  --data_key DATA_KEY  the field in the data file to be compared to the field in the ontology
+
 ```
 
