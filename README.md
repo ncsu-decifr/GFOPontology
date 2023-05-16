@@ -28,6 +28,20 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7236533/
 ```
 source /usr/local/pythonenvs/gfop_env/bin/activate
 cd src/
-microbe_masst_results.py
+python microbe_masst_results.py -husage: microbe_masst_results.py [-h] [--metadata_file METADATA_FILE]
+                                [--masst_file MASST_FILE] [--out_tsv_file OUT_TSV_FILE]
+
+Merge MASST results with microbeMASST metadata
+
+options:
+  -h, --help            show this help message and exit
+  --metadata_file METADATA_FILE
+                        microbe masst metadata
+  --masst_file MASST_FILE
+                        a tab separated file with additional data that is added to
+                        metadata file
+  --out_tsv_file OUT_TSV_FILE
+                        output file in .tsv format
+
 ```
 
