@@ -23,6 +23,7 @@ This will:
 
 ### Mass Spectrometry Searches using MASST
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7236533/
+https://gnps.ucsd.edu/ProteoSAFe/static/gnps-splash.jsp
 
 ### Pipeline
 edit bundle_to_html.py, line 83 to soup.body.append(new_script)
