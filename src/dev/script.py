@@ -2,9 +2,9 @@
 
 
 local_file = "../dist/oneindex.html"
-src_file = "../dist/oneindex_src.html"
+src_file = "../dist/oneindex_local.html"
 
-with open(src_file) as fp:
+with open(local_file) as fp:
     original_html_text = fp.read()
 
 
@@ -22,7 +22,7 @@ for tag in soup.find_all('script'):
 
 
 content = soup.find_all('script')[2].text
-with open("content_src.js", "w") as fp:
+with open("content_local.js", "w") as fp:
     fp.write(content)
 
 

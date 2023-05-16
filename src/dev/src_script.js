@@ -1,6 +1,4 @@
 
-const root = PLACEHOLDER_JSON_DATA;
-
 visitAll(root, e => e.originalChildren = e.children);
 const isNodeDragActive = !1;
 var charWidth = 2.4,
