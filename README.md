@@ -23,3 +23,11 @@ This will:
 
 ### Mass Spectrometry Searches using MASST
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7236533/
+
+### Pipeline
+```
+source /usr/local/pythonenvs/gfop_env/bin/activate
+cd src/
+microbe_masst_results.py
+```
+
