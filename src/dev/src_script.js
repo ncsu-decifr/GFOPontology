@@ -102,7 +102,7 @@ function initiateDrag(e, r) {
         return a.target.id == draggingNode.id
     }).remove(), dragStarted = null)
 }
-baseSvg = d3.select("#tree-container").append("svg").attr("width", viewerWidth).attr("height", viewerHeight).attr("class", "overlay").call(zoomListener), dragListener = d3.behavior.drag().on("dragstart", function(e) {
+baseSvg = d3.select("#tree-container").append("svg").attr("width", viewerWidth).attr("height", viewerHeight * 20).attr("class", "overlay").call(zoomListener), dragListener = d3.behavior.drag().on("dragstart", function(e) {
     e != root && (dragStarted = !0, nodes = tree.nodes(e), d3.event.sourceEvent.stopPropagation())
 }).on("drag", function(e) {
     if (e != root) {
