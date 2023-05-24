@@ -4,6 +4,8 @@
 from bs4 import BeautifulSoup
 import requests
 import json
+import os
+import subprocess
 
 
 def main():
@@ -25,7 +27,26 @@ def main():
     with open("libraries.js", "w") as fp:
         fp.write(content)
 
+def download():
+
+    file = "libraries.json"
+    home = "https://external.gnps2.org"
+    with open(file) as fp:
+        libraries_json = fp.read()
+        libraries = json.loads(libraries_json)
+        os.chdir("/usr/local/gnpslibrary")
+        for library in libraries:
+            if library['type'] == 'AGGREGATION':
+                continue
+            print(library['mgflink'])
+
+            cmd = [
+                "wget",
+                "%s/%s" % (home, library['mgflink'])
+            ]
+            subprocess.call(cmd)
 
 if __name__ == '__main__':
-    main()
+    # main()
+    download()
 
