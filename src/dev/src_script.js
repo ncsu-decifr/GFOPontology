@@ -21,6 +21,7 @@ var radius = 6,
     draggingNode = null,
     panSpeed = 200,
     panBoundary = 20,
+    height_multi = 30,
     i = 0,
     duration = 750,
     zoomListener, viewerWidth, viewerHeight, tree, tooltipDiv, baseSvg, svgGroup, diagonal = d3.svg.diagonal().projection(function(e) {
