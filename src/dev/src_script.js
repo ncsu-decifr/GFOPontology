@@ -103,7 +103,7 @@ function initiateDrag(e, r) {
         return a.target.id == draggingNode.id
     }).remove(), dragStarted = null)
 }
-baseSvg = d3.select("#tree-container").append("svg").attr("width", viewerWidth).attr("height", viewerHeight * 20).attr("class", "overlay").call(zoomListener), dragListener = d3.behavior.drag().on("dragstart", function(e) {
+baseSvg = d3.select("#tree-container").append("svg").attr("width", viewerWidth).attr("height", viewerHeight * height_multi).attr("class", "overlay").call(zoomListener), dragListener = d3.behavior.drag().on("dragstart", function(e) {
     e != root && (dragStarted = !0, nodes = tree.nodes(e), d3.event.sourceEvent.stopPropagation())
 }).on("drag", function(e) {
     if (e != root) {
@@ -152,7 +152,7 @@ var overCircle = function(e) {
         var r = svgGroup.selectAll(".templink").data(e);
         r.enter().append("path").attr("class", "templink").attr("d", d3.svg.diagonal()).attr("pointer-events", "none"), r.attr("d", d3.svg.diagonal()), r.exit().remove()
     };
-tooltipDiv = d3.select("body").append("div").attr("class", "tooltip").style("opacity", 0), svgGroup = baseSvg.append("g"), root.x0 = viewerHeight / 2, root.y0 = 0, visitAll(root, filterMatched), update(root), centerLeftNode(root);
+tooltipDiv = d3.select("body").append("div").attr("class", "tooltip").style("opacity", 0), svgGroup = baseSvg.append("g"), root.x0 = viewerHeight * height_multi / 2, root.y0 = 0, visitAll(root, filterMatched), update(root), centerLeftNode(root);
 
 function calcRadius(e) {
     return e > 0 && isScalingActive ? Math.min(radius + Math.sqrt(e), maxRadius) : radius
@@ -331,11 +331,11 @@ function filterMatched(e) {
 }
 
 function centerNode(e) {
-    scale = zoomListener.scale(), x = -e.y0, y = -e.x0, x = x * scale + viewerWidth / 2, y = y * scale + viewerHeight / 2, d3.select("g").transition().duration(duration).attr("transform", "translate(" + x + "," + y + ")scale(" + scale + ")"), zoomListener.scale(scale), zoomListener.translate([x, y])
+    scale = zoomListener.scale(), x = -e.y0, y = -e.x0, x = x * scale + viewerWidth / 2, y = y * scale + viewerHeight * height_multi / 2, d3.select("g").transition().duration(duration).attr("transform", "translate(" + x + "," + y + ")scale(" + scale + ")"), zoomListener.scale(scale), zoomListener.translate([x, y])
 }
 
 function centerLeftNode(e) {
-    scale = zoomListener.scale(), x = -e.y0, y = -e.x0, x = x * scale + 40, y = y * scale + viewerHeight / 2, d3.select("g").transition().duration(duration).attr("transform", "translate(" + x + "," + y + ")scale(" + scale + ")"), zoomListener.scale(scale), zoomListener.translate([x, y])
+    scale = zoomListener.scale(), x = -e.y0, y = -e.x0, x = x * scale + 40, y = y * scale + viewerHeight * height_multi / 2, d3.select("g").transition().duration(duration).attr("transform", "translate(" + x + "," + y + ")scale(" + scale + ")"), zoomListener.scale(scale), zoomListener.translate([x, y])
 }
 
 function toggleChildren(e) {
