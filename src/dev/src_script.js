@@ -1,4 +1,3 @@
-
 visitAll(root, e => e.originalChildren = e.children);
 const isNodeDragActive = !1;
 var charWidth = 2.4,
@@ -21,7 +20,7 @@ var radius = 6,
     draggingNode = null,
     panSpeed = 200,
     panBoundary = 20,
-    height_multi = 30,
+    height_multi = 40,
     i = 0,
     duration = 750,
     zoomListener, viewerWidth, viewerHeight, tree, tooltipDiv, baseSvg, svgGroup, diagonal = d3.svg.diagonal().projection(function(e) {
@@ -353,3 +352,9 @@ function setCharWidth(e) {
 function setLineHeight(e) {
     lineHeight !== e && (console.log("Set line height to " + e), lineHeight = e, update(root))
 }
+
+$(document).ready(function() {
+    $('html, body').animate({
+        scrollTop: viewerHeight * height_multi / 2 - 400
+    }, 500);
+});
