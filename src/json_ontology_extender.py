@@ -40,9 +40,8 @@ def add_data_to_node(node, df, node_field, data_field):
 
                 rowi = filtered.index[0]
                 for col, value in df.iteritems():
-                    logger.debug("%s %s" % (col, value))
                     if col != data_field:
-                        # print("%s is %s" % (col, value[rowi]))
+                        logger.debug("%s is %s" % (col, value[rowi]))
                         node[col] = value[rowi]
     except Exception as ex:
         logger.exception(ex)
@@ -117,9 +116,11 @@ def add_data_to_ontology_file(output="dist/merged_ontology_data.json", ontology_
         # print(df)
 
         # loop over all children
+        logger.debug("add_data_to_ontology_file")
         logger.debug(df)
         logger.debug(node_key)
         logger.debug(data_key)
+        logger.debug("add_data_to_ontology_file")
         add_data_to_node(treeRoot, df, node_key, data_key)
 
         # check if group_size is available otherwise propagate
