@@ -31,6 +31,11 @@ def add_data_to_node(node, df, node_field, data_field):
     """
     try:
         ncbi = node.get(node_field)
+        if ncbi == '5065':
+            logger.debug(ncbi)
+            logger.debug(df[data_field])
+            logger.debug(df[data_field] == ncbi)
+
         if ncbi is None:
             logger.warning("node has no id {}".format(node.get("name", "NONAME")))
         else:
