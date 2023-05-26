@@ -36,8 +36,11 @@ def add_data_to_node(node, df, node_field, data_field):
         else:
             filtered = df[df[data_field] == ncbi]
             if len(filtered) > 0:
+                logger.debug("filtered %s " % filtered)
+
                 rowi = filtered.index[0]
                 for col, value in df.iteritems():
+                    logger.debug("%s %s" % (col, value))
                     if col != data_field:
                         # print("%s is %s" % (col, value[rowi]))
                         node[col] = value[rowi]
@@ -114,6 +117,9 @@ def add_data_to_ontology_file(output="dist/merged_ontology_data.json", ontology_
         # print(df)
 
         # loop over all children
+        logger.debug(df)
+        logger.debug(node_key)
+        logger.debug(data_key)
         add_data_to_node(treeRoot, df, node_key, data_key)
 
         # check if group_size is available otherwise propagate
