@@ -39,6 +39,7 @@ def add_data_to_node(node, df, node_field, data_field):
         if ncbi is None:
             logger.warning("node has no id {}".format(node.get("name", "NONAME")))
         else:
+            # https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.filter.html
             filtered = df[df[data_field] == ncbi]
             if len(filtered) > 0:
                 logger.debug("filtered %s " % filtered)
