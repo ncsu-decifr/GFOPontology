@@ -34,13 +34,15 @@ def add_data_to_node(node, df, node_field, data_field):
         if ncbi is None:
             logger.warning("node has no id {}".format(node.get("name", "NONAME")))
         else:
-            filtered = df[df[data_field] == ncbi]
-            if len(filtered) > 0:
-                rowi = filtered.index[0]
-                for col, value in df.iteritems():
-                    if col != data_field:
-                        # print("%s is %s" % (col, value[rowi]))
-                        node[col] = value[rowi]
+            for index, row in df.iterrows():
+                if ncbi == str(row[data_field]):
+                    logger.debug("match: %s" % ncbi)
+                    logger.debug(type(ncbi))
+                    logger.debug(type(row[data_field]))
+                    col = df.columns[1]
+                    node[col] = row[col]
+
+
     except Exception as ex:
         logger.exception(ex)
     # apply to all children
