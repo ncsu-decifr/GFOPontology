@@ -31,6 +31,11 @@ def add_data_to_node(node, df, node_field, data_field):
     """
     try:
         ncbi = node.get(node_field)
+        if ncbi == '5065':
+            logger.debug(ncbi)
+            logger.debug(df[data_field])
+            logger.debug(df[data_field] == ncbi)
+
         if ncbi is None:
             logger.warning("node has no id {}".format(node.get("name", "NONAME")))
         else:
@@ -41,6 +46,7 @@ def add_data_to_node(node, df, node_field, data_field):
                     logger.debug(type(row[data_field]))
                     col = df.columns[1]
                     node[col] = row[col]
+
 
 
     except Exception as ex:
@@ -116,6 +122,11 @@ def add_data_to_ontology_file(output="dist/merged_ontology_data.json", ontology_
         # print(df)
 
         # loop over all children
+        logger.debug("add_data_to_ontology_file")
+        logger.debug(df)
+        logger.debug(node_key)
+        logger.debug(data_key)
+        logger.debug("add_data_to_ontology_file")
         add_data_to_node(treeRoot, df, node_key, data_key)
 
         # check if group_size is available otherwise propagate
